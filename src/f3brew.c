@@ -371,11 +371,6 @@ static void print_block_range(const struct block_range *range)
 	printf("\n");
 }
 
-static inline bool is_block(uint64_t offset, unsigned int block_order)
-{
-	return !(((1ULL << block_order) - 1) & offset);
-}
-
 static void update_good_range(struct block_range *good_range,
 	const struct block_range *range)
 {
@@ -402,8 +397,6 @@ static void validate_block(struct flow *fw, uint64_t block,
 		block_order, expected_offset, &found_offset, 0, stats);
 	const uint64_t found_block = found_offset >> block_order;
 	bool push_range;
-
-	assert(is_block(found_offset, block_order));
 
 	push_range = (range->state != state) || (
 			state == bs_overwritten
