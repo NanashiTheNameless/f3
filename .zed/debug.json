@@ -1,0 +1,68 @@
+[
+  // Use adapter "CodeLLDB" because "GDB" is not working on gdb versions
+  // before gdb 17.
+  // See https://github.com/zed-industries/zed/issues/41753 for more details.
+  {
+    "label": "f3brew test",
+    "adapter": "CodeLLDB",
+    "request": "launch",
+    "program": "$ZED_WORKTREE_ROOT/build/f3brew",
+    "args": ["--debug", "--fix-cmd", "test"]
+  },
+  {
+    "label": "f3probe unit-test",
+    "adapter": "CodeLLDB",
+    "request": "launch",
+    "program": "$ZED_WORKTREE_ROOT/build/f3probe",
+    "args": ["--debug-unit-test", "test"]
+  },
+  {
+    "label": "f3probe simple test",
+    "adapter": "CodeLLDB",
+    "request": "launch",
+    "program": "$ZED_WORKTREE_ROOT/build/f3probe",
+    "args": ["--debug", "--destructive", "--verbose", "test"]
+  },
+  {
+    "label": "f3probe test",
+    "adapter": "CodeLLDB",
+    "request": "launch",
+    "program": "$ZED_WORKTREE_ROOT/build/f3probe",
+    "args": [
+      "--debug-real-size=1G",
+      "--debug-fake-size=1T",
+      "--debug-wrap=40",
+      "--debug-cache-order=21",
+      "--debug-strict-cache",
+      "--destructive",
+      "--verbose",
+      "test"
+    ]
+    // Uncomment the following line to run under sudo:
+    // "gdb_path": "$ZED_WORKTREE_ROOT/.zed/gdb-sudo.sh"
+  },
+  {
+    "label": "f3write a",
+    "adapter": "CodeLLDB",
+    "request": "launch",
+    "build": {
+      "command": "mkdir",
+      // -p creates the directory if needed and avoids failing if it already exists.
+      "args": ["-p", "a"]
+    },
+    "program": "$ZED_WORKTREE_ROOT/build/f3write",
+    "args": ["--end-at=5", "a"]
+  },
+  {
+    "label": "f3read a",
+    "adapter": "CodeLLDB",
+    "request": "launch",
+    "build": {
+      "command": "mkdir",
+      // -p creates the directory if needed and avoids failing if it already exists.
+      "args": ["-p", "a"]
+    },
+    "program": "$ZED_WORKTREE_ROOT/build/f3read",
+    "args": ["a"]
+  }
+]

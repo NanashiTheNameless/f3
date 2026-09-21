@@ -1,0 +1,13 @@
+[
+  {
+    "label": "F3: Build",
+    "command": "make",
+    "args": ["all", "extra"],
+    "save": "all"
+  },
+  {
+    "label": "F3: Clean",
+    "command": "make",
+    "args": ["clean"]
+  }
+]
