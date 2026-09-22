@@ -14,7 +14,7 @@ When generating, modifying, or reviewing C code in the F3 project, follow these 
 
 ## 2. Formatting and Indentation
 - **Indentation**: Uses **Tabs** for indentation.
-- **Braces**: K&R style. Opening braces `{` are on the same line as the statement (`if`, `while`, `for`, `switch`, `struct`, and function definitions).
+- **Braces**: K&R style. Opening braces `{` are on the same line for control statements (`if`, `while`, `for`, `switch`) and `struct` definitions, but on a new line at column 0 for function definitions.
 - **Whitespace**:
   - Space after keywords (`if`, `while`, `for`, `switch`, `do`).
   - No space between function name and the opening parenthesis `(`.
