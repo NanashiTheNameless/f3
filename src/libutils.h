@@ -64,10 +64,9 @@ int nsec_to_str(uint64_t nsec, char *str);
 /*
  * The functions align_head() and align_mem() are used to align pointers.
  *
- * The following example allocates two block on stack and makes sure that
+ * The following example allocates two blocks on stack and makes sure that
  * the blocks are aligned with the block size.
  *
- *	// The number 2 below means two blocks.
  *	char stack[align_head(block_order) + (2 << block_order)];
  *	char *stamp_blk, *probe_blk;
  *	stamp_blk = align_mem(stack, block_order);

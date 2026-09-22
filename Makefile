@@ -1,5 +1,5 @@
 CC ?= gcc
-CFLAGS += -std=c17 -Wall -Wextra -pedantic -MMD -ggdb
+CFLAGS += -std=c17 -Wall -Wextra -pedantic -Wdeclaration-after-statement -MMD -ggdb
 
 BUILD_DIR = build
 SRC_DIR = src
