@@ -1,9 +1,11 @@
 ---
-trigger: model_decision
-description: After generating or editing code
+name: coding-style
+description: Coding style and formatting rules for F3. Use when writing, modifying, refactoring, or reviewing C code in the F3 project.
 ---
 
 # F3 Coding Style
+
+When generating, modifying, or reviewing C code in the F3 project, follow these coding style guidelines and conventions.
 
 ## 1. General Principles
 - **Language**: C (C17 standard as specified in the Makefile).
@@ -14,10 +16,10 @@ description: After generating or editing code
 - **Indentation**: Uses **Tabs** for indentation.
 - **Braces**: K&R style. Opening braces `{` are on the same line as the statement (`if`, `while`, `for`, `switch`, `struct`, and function definitions).
 - **Whitespace**:
-    - Space after keywords (`if`, `while`, `for`, `switch`, `do`).
-    - No space between function name and the opening parenthesis `(`.
-    - Pointers: `char *ptr` (space before the asterisk, not after).
-    - Alignment: Struct member assignments and function parameters are often aligned using tabs when spanning multiple lines.
+  - Space after keywords (`if`, `while`, `for`, `switch`, `do`).
+  - No space between function name and the opening parenthesis `(`.
+  - Pointers: `char *ptr` (space before the asterisk, not after).
+  - Alignment: Struct member assignments and function parameters are often aligned using tabs when spanning multiple lines.
 
 ## 3. Naming Conventions
 - **Files**: Lowercase with `snake_case` (e.g., `f3read.c`, `libutils.h`).
