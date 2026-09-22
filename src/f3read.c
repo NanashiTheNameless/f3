@@ -314,6 +314,8 @@ static void validate_file(struct flow *fw, struct dynamic_buffer *dbuf,
 		} else if (file_time_ns > 0) {
 			const uint64_t blocks_read =
 				stats->bytes_read >> block_order;
+			const char *unit;
+
 			assert((stats->bytes_read & (block_size - 1)) == 0);
 			if (file_tot_blocks == blocks_read &&
 					file_tot_time_ns > 0) {
@@ -321,7 +323,7 @@ static void validate_file(struct flow *fw, struct dynamic_buffer *dbuf,
 			}
 			file_avg_speed = calc_avg_speed(block_order,
 				blocks_read, file_time_ns);
-			const char *unit = adjust_unit(&file_avg_speed);
+			unit = adjust_unit(&file_avg_speed);
 			printf(" Avg: %.2f %s/s", file_avg_speed, unit);
 		}
 	}
